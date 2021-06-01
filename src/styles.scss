@@ -1,7 +1,278 @@
-/* Add styles */
-$base-font-size: 24px;
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: $base-font-size;
+* {
+  box-sizing: border-box;
 }
+
+html,
+body,
+ul,
+li,
+button,
+input,
+textarea,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: 'SergoeUI', sans-serif;
+  font-size: 14px;
+  line-height: 19px;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: 'SergoeUI';
+  src: url('./fonts/SegoeUI.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+  @font-face {
+  font-family: 'SergoeUI';
+  src: url('./fonts/SegoeUI-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: bold;
+}
+
+.header {
+  padding: 0 35px;
+  margin-top: 20px;
+
+  &__mobile {
+    display: none;
+  }
+
+  &__logo {
+    width: 150px;
+    height: 40px;
+    margin: 10px;  
+  }
+
+  &__group {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__group-small {
+    display: flex;
+  }
+
+  &__decoration {
+    border-left: 2px solid #000;
+    height: 40px;
+    margin-top: 10px;
+  }
+}
+
+.nav {
+  display: flex;
+
+  &__list {
+    display: flex;
+    align-items: baseline;
+    list-style: none;
+    padding: 10px;
+  }
+
+  &__item {
+    display: flex;
+    padding: 0 5px;
+  }
+  
+  &__link {
+    display: flex;
+    padding: 10px 5px;
+    text-decoration: none;
+    color: #262626;
+    align-items: center;
+    
+    &:hover {
+      border-bottom: 2px solid #000;
+    }
+  }
+
+  &__item-biggest {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  &__item--more {
+    display: none;
+  }
+
+  &__button-drop {
+    width: 19px;
+    height: 19px;
+    background-image: url('./images/15.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    background-color: #fff;
+    margin-left: 3px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 35px 0;
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+  
+  &__item--all {
+    align-items: center;
+  }
+  
+  &__link,
+  &__link--all {
+    text-decoration: none;
+    padding: 10px 5px 5px;
+    color: #262626;
+
+    &:hover {
+      border-bottom: 2px solid #000;
+    }
+  }
+
+  &__button {
+    width: 33px;
+    height: 33px;
+    background-color: white;
+    border: none;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__button--drop {
+    height: 20px;
+    background-image: url('./images/15.png');
+  }
+
+  &__button--cart {
+    background-image: url('./images/cart.png');
+  }
+
+  &__button--search {
+    background-image: url('./images/magn.png');
+    transform: scale(-1, 1);
+  }
+
+  &__button--sign {
+    background-image: url('./images/user1.png');
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 1400px) {
+  .header {
+    padding: 0 10px;
+  }
+
+  .nav {
+    &__item--hidden {
+      display: none;
+    }
+
+    &__item--more {
+      display: block;
+    }
+  }
+
+  .actions {
+    padding-left: 20px;
+
+    &__link {
+      display: none;
+    }
+
+    &__button {
+      padding: 0 20px;
+    }
+  }
+}
+
+
+@media (max-width: 1100px) {
+  .actions {
+    padding: 0;
+
+    &__item--all {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .header {
+    box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5);
+
+    &__mobile {
+      display: block;
+      margin-top: 10px;
+    }
+
+    &__mobile-button {
+      width: 33px;
+      height: 33px;
+      background-color: #fff;
+      border: none;
+      background-position: center;
+      background-repeat: no-repeat;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__mobile-button--burger {
+      background-image: url('./images/burger.png');
+    }
+
+    &__mobile-button--search {
+      background-image: url('./images/magn.png');
+      transform: scale(-1, 1);
+    }
+
+    &__decoration {
+      display: none;
+    }
+
+    &__logo {
+      align-self: center;
+    }
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .actions {
+    &__item--all,
+    &__button--search {
+      display: none;
+    }
+  }
+
+  .mobile {
+    display: block;
+    padding: 10px 20px;
+  }
+}
+
+
